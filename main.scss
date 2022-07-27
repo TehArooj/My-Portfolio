@@ -1,0 +1,311 @@
+$colors:(
+    primary: #0e1b2c,
+    secondary:white,
+    accent: #0090b7,
+
+);
+
+/* The initial design is for mobile
+having width range 320px-480px and 
+the design has been made responsive 
+for sreens having larger width range
+than mobiles*/ 
+
+
+//Extra Large screens width range :  1201px-more
+
+$min-extra-large-screen:1201px;
+
+//Large desktop screens width range :  1025px-1200px
+
+
+$min-desktop:1025px;
+$max-desktop:1200px; 
+
+//Small screens width range : 769px-1024px
+
+$min-screen:769px; 
+$max-screen:1024px;
+
+// Tablet width range : 481px-768px
+
+$min-tablet:481px;
+$max-tablet:768px; 
+
+
+$h1-desktop-font:60px;
+$h2-desktop-font:50px;
+$a-desktop-font:22px;
+
+$h1-screen-font:45px;
+$h2-screen-font:35px;
+$a-screen-font:18px;
+
+$h1-tablet-font:40px;
+$h2-tablet-font:30px;
+$a-tablet-font:16px;
+
+@mixin desktop {
+    @media (min-width:#{$min-desktop}) and (max-width:#{$max-desktop}),(min-width:#{$min-extra-large-screen}) {
+
+        @content;  
+    }
+}
+
+@mixin screen {
+    @media (min-width:#{$min-screen}) and (max-width:#{$max-screen}) {
+
+        @content;  
+    }
+}
+@mixin tablet {
+    @media (min-width:#{$min-tablet}) and (max-width:#{$max-tablet}) {
+
+        @content;  
+    }
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: map-get($colors, headingsColor);
+}
+body{
+    background-color: map-get($colors, primary);
+        h1{
+            @include desktop(){
+                font-size: $h1-desktop-font;
+            }
+            @include screen(){
+                font-size:$h1-screen-font;
+            }
+            @include tablet(){
+                font-size:$h1-tablet-font;
+            }
+            
+        }
+      
+        nav{
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            background-color: map-get($colors, accent) ;
+            height:60px;
+            @include desktop{
+              height:65px;
+            }
+            ul.nav-links{
+                display: inline-flex;
+                flex-direction: row;     
+    
+                li{
+                    list-style: none;
+                    align-items: center;
+                    a{
+                        text-decoration: none;
+                        font-size: 12px;
+                        padding-left: 30px;
+                        padding-right: 40px;
+                        justify-content: space-evenly;
+                        font-style:normal;
+                        text-align: justify;
+                        color:map-get($colors, secondary) ;
+
+                        @include desktop(){
+                            font-size: 26px;
+                            padding-left: 50px;
+                        }
+
+                        @include screen(){
+                            font-size:22px;
+                
+                        }
+                        @include tablet(){
+                            font-size:18px;
+                        }
+
+                    }  
+                    a:hover{
+                        color:map-get($colors , primary );
+                    }
+                } 
+            }
+            }
+        }
+
+
+
+    section{
+        background-color:map-get($colors,primary);
+        height:inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+
+    }
+    a{
+        justify-content: space-between;
+        text-decoration: none;
+        font-size: 12px;
+        padding:5px;
+        text-align: center;
+
+    }
+    section.welcome-section {
+        height: 100vh;
+
+        div.welcome-head{
+            color: map-get($colors,secondary);
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+
+    }
+    section.projects{
+
+        background-color: map-get($colors,secondary) ;
+        h2.project-heading{
+            text-align: center;
+            color: map-get($colors,primary) ;
+            @include desktop(){
+                font-size: $h2-desktop-font;
+            }
+            @include screen(){
+                font-size:$h2-screen-font;
+            }
+            @include tablet(){
+                font-size:$h2-tablet-font;
+            }
+
+        }
+        .my-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 10px;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            
+        }
+        a{
+            @include desktop{
+                font-size: 18px;
+            }
+            @include tablet(){
+                font-size: 16px;
+            }
+            
+            img{
+                border-radius: 8px;
+                height:150px;
+                width:150px;
+                @include desktop(){
+                    border-radius: 8px;
+                    height: 350px;
+                    width:200px;
+                }
+            }
+        }  
+        a.btn{
+
+            padding: 10px 20px;
+            text-align:center;
+            text-decoration: none;
+            display:inline-block;
+            border-radius: 2px;
+            font-size: 18px;
+            color: map-get($colors , secondary);
+            background-color: map-get($colors, accent);
+            transition: background 0.3s ease-out;
+            
+
+        }
+        a.btn:hover{
+            background: map-get($colors , primary );
+
+        }
+
+    }
+    section.contact{
+        h2{
+            @include desktop(){
+                font-size: $h2-desktop-font;
+            }
+            @include screen(){
+                font-size: $h2-screen-font;
+            }
+            @include tablet(){
+                font-size: $h2-tablet-font;
+            }
+        }
+        a{
+            @include desktop(){
+                font-size: $a-desktop-font;
+            }
+            @include screen(){
+                font-size: $a-screen-font;
+            }
+            @include tablet(){
+                font-size: $a-tablet-font;
+            }
+        }
+
+        div.contact-head{
+            color: map-get($colors, accent); 
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    footer {
+        a{
+            @include desktop(){
+                font-size: $a-desktop-font;
+            }
+            @include screen(){
+                font-size: $a-screen-font;
+            }
+            @include tablet(){
+                font-size: $a-tablet-font;
+            }
+        }
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-top: 4px solid;
+
+    }
+
+h1,h2{
+    color: map-get($colors, secondary) ;
+}
+p{
+    color: map-get($colors, accent); 
+        text-align: center;
+        align-self: center;
+        font-size: 12px;
+        @include desktop(){
+            font-size: 26px;
+        }
+        @include screen(){
+            font-size: 24px;
+        }
+        @include tablet(){
+            font-size: 14px;
+        }
+
+}
+
+
+
