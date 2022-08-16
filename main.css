@@ -1,0 +1,263 @@
+/* The initial design is for mobile
+having width range 320px-480px and 
+the design has been made responsive 
+for sreens having larger width range
+than mobiles*/
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0e1b2c;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  body h1 {
+    font-size: 60px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body h1 {
+    font-size: 45px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  body h1 {
+    font-size: 40px;
+  }
+}
+body nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0090b7;
+  height: 60px;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  body nav {
+    height: 65px;
+  }
+}
+body nav ul.nav-links {
+  display: inline-flex;
+  flex-direction: row;
+}
+body nav ul.nav-links li {
+  list-style: none;
+  align-items: center;
+}
+body nav ul.nav-links li a {
+  text-decoration: none;
+  font-size: 12px;
+  padding-left: 30px;
+  padding-right: 40px;
+  justify-content: space-evenly;
+  font-style: normal;
+  text-align: justify;
+  color: white;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  body nav ul.nav-links li a {
+    font-size: 26px;
+    padding-left: 50px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  body nav ul.nav-links li a {
+    font-size: 22px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  body nav ul.nav-links li a {
+    font-size: 18px;
+  }
+}
+body nav ul.nav-links li a:hover {
+  color: #0e1b2c;
+}
+
+section {
+  background-color: #0e1b2c;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+a {
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+}
+
+section.welcome-section {
+  height: 100vh;
+}
+section.welcome-section div.welcome-head {
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+section.projects {
+  background-color: white;
+}
+section.projects h2.project-heading {
+  text-align: center;
+  color: #0e1b2c;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  section.projects h2.project-heading {
+    font-size: 50px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  section.projects h2.project-heading {
+    font-size: 35px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  section.projects h2.project-heading {
+    font-size: 30px;
+  }
+}
+section.projects .my-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  section.projects a {
+    font-size: 18px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  section.projects a {
+    font-size: 16px;
+  }
+}
+section.projects a img {
+  border-radius: 8px;
+  height: 150px;
+  width: 150px;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  section.projects a img {
+    border-radius: 8px;
+    height: 350px;
+    width: 200px;
+  }
+}
+section.projects a.btn {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 18px;
+  color: white;
+  background-color: #0090b7;
+  transition: background 0.3s ease-out;
+}
+section.projects a.btn:hover {
+  background: #0e1b2c;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  section.contact h2 {
+    font-size: 50px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  section.contact h2 {
+    font-size: 35px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  section.contact h2 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  section.contact a {
+    font-size: 22px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  section.contact a {
+    font-size: 18px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  section.contact a {
+    font-size: 16px;
+  }
+}
+section.contact div.contact-head {
+  color: #0090b7;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-top: 4px solid;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  footer a {
+    font-size: 22px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  footer a {
+    font-size: 18px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  footer a {
+    font-size: 16px;
+  }
+}
+
+h1, h2 {
+  color: white;
+}
+
+p {
+  color: #0090b7;
+  text-align: center;
+  align-self: center;
+  font-size: 12px;
+}
+@media (min-width: 1025px) and (max-width: 1200px), (min-width: 1201px) {
+  p {
+    font-size: 26px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  p {
+    font-size: 24px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  p {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=main.css.map */
